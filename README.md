@@ -10,8 +10,10 @@ Teva -> ...
 
 Johann -> ...
 
-Quizz
+Features Principales :
 
-Combat
+Systeme de quetes avec differents mini jeux:
 
-Stuff (améliorations, etc...)
+- Quizz
+- Combats
+- Stuff (améliorations, etc...)
