@@ -15,5 +15,6 @@ Features Principales :
 Systeme de quetes avec differents mini jeux:
 
 - Quizz
-- Combats
+- Combat
+- Dessin souris (style Squidgame)
 - Stuff (améliorations, etc...)
