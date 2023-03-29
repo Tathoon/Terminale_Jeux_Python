@@ -9,3 +9,9 @@ Thomas -> Assets....
 Teva -> ...
 
 Johann -> ...
+
+Quizz
+
+Combat
+
+Stuff (améliorations, etc...)
