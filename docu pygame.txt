@@ -1,0 +1,73 @@
+FlatIcone
+Utilisation de la bibliothèque Pygame:
+
+    • Importer la biblio :
+
+Import pygame
+from pygame.locals import *
+
+    • Initialiser la biblio :
+
+pygame.init()
+
+    • Créer une fenêtre fonctionnelle de dimmension x,y (qui se ferme lorsque l'on appuie sur la croix):
+
+pygame.init()
+fenetre = pygame.display.set_mode((x, y))
+Bool=True
+while Bool:
+	for event in pygame.event.get():
+		if event.type == QUIT:
+			Bool=False
+pygame.quit()
+
+    • Remplir l’arrière plan :
+
+background = pygame.Surface(screen.get_size())	#.get_size() permet de prendre les dimensions de la fenêtre pygame
+background = background.convert()
+background.fill((250, 250, 250))
+
+    • Mettre du texte sur l’arrière plan :
+
+font = pygame.font.Font(None, 36)
+text = font.render("Hello There", 1, (10, 10, 10))
+textpos = text.get_rect()
+textpos.centerx = background.get_rect().centerx
+background.blit(text, textpos)
+
+    • Rajouter une image (définir l'ap ou en rajouter une dessus) :
+
+fond=pygame.image.load("image.jpg").convert()
+fenetre.blit(fond,(0,0))
+
+Rajouter pygame.display.update() à la fin de la boucle for
+
+
+
+
+
+
+
+    • Déplacer une image :
+
+-->Utiliser des objets dits de type Rect (rectangle en 2D)
+
+Définir un objet Rect :
+
+    • les déplacements
+
+entiers :top,left,bottom,right,centerx, centery
+tuples:bottomleft,bottomright,topleft,topright,midtop,midleft,midbottom,
+midright, center
+
+    • la taille de l'objet
+
+size, width, height – w, h
+
+
+    • Utiliser les touches pour réaliser des actions :
+
+
+
+
+
