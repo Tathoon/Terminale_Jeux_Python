@@ -61,9 +61,32 @@ size, width, height – w, h
 
     • Utiliser les touches pour réaliser des actions :
 
-Si event.type = QUIT, signifie que l'ont a appuyé sur la croix
+On doit utiliser K_ devant la touche correspondante 
+Type :
+pygame.KEYDOWN ou pygame.KEYUP
+Ex : if event.key == pygame.K_(touche):
+Ex : K_9 ou K_G
 
+	Stocker des infos sur la fenêtre dans des variables
 
+Taille : screen.get_size()
+Hauteur : screen.get_height()
+Width : screen.get_width()
 
+	Update une fenêtre 
 
+pygame.display.update()
+pygame.display.flip()
 
+	Définir les évènements réalisés :
+
+	Détecter les clics de souris :
+Type:
+pygame.MOUSEBUTTONDOWN ou pygame.MOUSEBUTTONUP
+gauche --> if event.button==1:
+droite --> if event.button==2:
+molette --> if event.button==3:
+
+	Détecter les déplacements de souris :
+Type:
+pygame.MOUSEMOTION
