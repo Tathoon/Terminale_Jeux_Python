@@ -19,9 +19,13 @@ def scene1():
 Booleen = True
 while Booleen:
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            Booleen = False
-        if pygame.mouse.get_pressed():
-            scene1()
-    pygame.display.update()                       
-pygame.quit()
+        if event.type == pygame.KEYDOWN:
+            if event.key==pygame.K_TAB:
+                pygame.quit()
+                quit()
+        click_counter=pygame.mouse.get_pressed()
+        
+if click_counter:
+    scene1()
+    
+pygame.display.update()                       
