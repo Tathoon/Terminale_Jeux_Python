@@ -90,3 +90,13 @@ molette --> if event.button==3:
 	Détecter les déplacements de souris :
 Type:
 pygame.MOUSEMOTION
+
+	Activer de la musique
+
+son = pygame.mixer.Sound("son.wav")
+joue=True
+	Jouer le son
+son.play()
+	Actions sur le son
+pygame.mixer.pause()
+pygame.mixer.unpause()
