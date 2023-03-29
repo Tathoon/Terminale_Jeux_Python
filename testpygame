@@ -1,0 +1,27 @@
+import pygame
+from pygame.locals import *
+
+pygame.init()
+
+screentest = pygame.display.set_mode((640, 480))
+background=pygame.image.load("jeu_python.jpg").convert()
+screentest.blit(background,(0,0))
+
+color=(156,87,49)
+witdh=screentest.get_width()
+height=screentest.get_height()
+
+def scene1():
+    screentest.blit(background(0,0))
+    
+
+
+Booleen = True
+while Booleen:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            Booleen = False
+        if pygame.mouse.get_pressed():
+            scene1()
+    pygame.display.update()                       
+pygame.quit()
