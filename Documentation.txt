@@ -53,7 +53,7 @@ Définir un objet Rect :
 entiers :top,left,bottom,right,centerx, centery
 tuples:bottomleft,bottomright,topleft,topright,midtop,midleft,midbottom,
 midright, center
-
+Ex: perso.topleft(x,y)
     • la taille de l'objet
 
 size, width, height – w, h
