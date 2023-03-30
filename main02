@@ -1,0 +1,84 @@
+# Importation de Pygame et chargement de ses composants
+import pygame
+from pygame.locals import *
+pygame.init()
+
+
+
+class Jeu:
+    
+    def __init__(self):
+        self.etat = "Accueil" # Les différents états possibles sont: "Accueil", "Trone", "Quete1" et "Quete 2"
+
+
+class guerrier:
+
+    def __init__(self):
+        self.health = 1
+        self.max_health = 1
+        """à suivre"""
+        
+
+
+        
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+mainScreen = pygame.display.set_caption("Une ère paisible") # Nommage de la fenêtre
+mainScreen = pygame.display.set_mode((1280, 720)) # Création et définition des dimmensions de la fenêtre
+
+# Import de l'arrière plan
+background = pygame.image.load('assets/background/mainBack01.jpg')
+background = pygame.transform.scale(background,(mainScreen.get_size()))
+print(mainScreen.get_size())
+
+# Import du bouton Start
+
+class button:
+    def __init(self, chemin, dim_x, dim_y, pos_x, pos_y):
+        self.image = pygame.image.load(chemin)
+        self.dimensions = pygame.transform.scale(self,(dim_x,dim_y))
+        self.rect = self.get_rect()
+        self.rect.center = (pos_x,pos_y)
+        
+buttonStart = button("assets/button/startbutton02.png",305,135,395,460)
+
+
+
+
+
+
+
+
+
+
+
+# Boucle qui permet la fermeture de la fenêtre lorsque la croix est pressee
+running = True
+while running:
+
+    # appliquer l'arrière plan puis mettre à jour la fenêtre
+
+    mainScreen.blit(background, (0,0))
+    mainScreen.blit(button,button_rect)
+    pygame.display.flip()
+
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            running = False
+            pygame.quit()
+    
+        if event.type == pygame.MOUSEBUTTONDOWN:
+                if buttonStart.rect.collidepoint(event.pos):
+                    print("Le bouton a été cliqué !")
