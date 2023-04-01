@@ -108,3 +108,7 @@ pygame.mixer.unpause()
 Gérer les fps du jeu :
 Clock = pygame.time.clock () #variable stockant l'instance de l'objet clock
 Clock.tick(60) # méthode tick() qui initialise les fps du jeu 
+
+Hitbox d'un objet 
+objet pygame.Rect
+attributs de cet objet : pos x, pos y, largeur, hauteur
