@@ -30,7 +30,7 @@ class guerrier(pygame.sprite.Sprite):
                 elif guerrier.pressed.get(pygame.K_RIGHT):
                     self.pos.x += self.speed
                 elif guerrier.pressed.get(pygame.K_UP):
-                    self.pos.y += self.speed
-                elif guerrier.pressed.get(pygame.K_DOWN):
                     self.pos.y -= self.speed
+                elif guerrier.pressed.get(pygame.K_DOWN):
+                    self.pos.y += self.speed
 
