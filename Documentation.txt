@@ -24,8 +24,8 @@ pygame.quit()
     • Remplir l’arrière plan :
 
 background = pygame.Surface(screen.get_size())	#.get_size() permet de prendre les dimensions de la fenêtre pygame
-background = background.convert()
-background.fill((250, 250, 250))
+background = background.convert() qui permet de convertir l'image choisie dans un format plus adapté
+background.fill((250, 250, 250)) nécessaire lors du déplacement d'une image en remettant à zero la zone d'affichage
 
     • Mettre du texte sur l’arrière plan :
 
@@ -33,14 +33,14 @@ font = pygame.font.Font(None, 36)
 text = font.render("Hello There", 1, (10, 10, 10))
 textpos = text.get_rect()
 textpos.centerx = background.get_rect().centerx
-background.blit(text, textpos)
+background.blit(text, textpos) qui permet de transformer l'arriere plan en changeant la valeur de chaque pixel
 
     • Rajouter une image (définir l'ap ou en rajouter une dessus) :
 
 fond=pygame.image.load("image.jpg").convert()
 fenetre.blit(fond,(0,0))
 
-Rajouter pygame.display.update() à la fin de la boucle for
+Rajouter pygame.display.update()  ou pygame.display.flip() à la fin de la boucle for
 
     • Déplacer une image :
 
@@ -67,6 +67,9 @@ Type :
 pygame.KEYDOWN ou pygame.KEYUP
 Ex : if event.key == pygame.K_(touche):
 Ex : K_9 ou K_G
+
+NB : Il est également possible de détecter ses touches lorsque que celles-ci sont pressées et le temps de leur pression
+--> méthode get_pressed()
 
 	Stocker des infos sur la fenêtre dans des variables
 
@@ -101,3 +104,7 @@ son.play()
 	Actions sur le son
 pygame.mixer.pause()
 pygame.mixer.unpause()
+
+Gérer les fps du jeu :
+Clock = pygame.time.clock () #variable stockant l'instance de l'objet clock
+Clock.tick(60) # méthode tick() qui initialise les fps du jeu 
