@@ -140,7 +140,7 @@ Hitbox d'un objet
 objet pygame.Rect
 attributs de cet objet : pos x, pos y, largeur, hauteur
 
-	Sprite 
+	Super-classe Sprite 
 
 pygame.sprite.Sprite.update
 #méthode controlant le comportement d'un sprite
@@ -160,9 +160,74 @@ pygame.sprite.Sprite.alive
 pygame.sprite.Sprite.groups
 #méthode qui fait une liste des sprites appartenant à un groupe de sprites
 
+	Super-classe Group
+
+pygame.sprite.Group.sprites
+list of the Sprites this Group contains
+
+pygame.sprite.Group.copy
+duplicate the Group
+
+pygame.sprite.Group.add
+add Sprites to this Group
+
+pygame.sprite.Group.remove
+remove Sprites from the Group
+
+pygame.sprite.Group.has
+test if a Group contains Sprites
+
+pygame.sprite.Group.update
+call the update method on contained Sprites
+
+pygame.sprite.Group.draw
+blit the Sprite images
+
+pygame.sprite.Group.clear
+draw a background over the Sprites
+
+pygame.sprite.Group.empty
+remove all Sprites
+
 	Super-classes
 
 super.__init__() #méthode pour appeler une super-classe
 class NomClass(Super-classe1, Superclass2): Pour atttribuer à une classe des super-classes
 
 Ex de super-classes : Sprite, DirtySprite, 
+
+pygame.sprite.RenderUpdates.draw #autre méthode pour dessiner un Sprite 
+
+	Super-classe LayeredUpdate
+pygame.sprite.LayeredUpdates.add
+add a sprite or sequence of sprites to a group
+pygame.sprite.LayeredUpdates.sprites
+returns a ordered list of sprites (first back, last top).
+pygame.sprite.LayeredUpdates.draw
+draw all sprites in the right order onto the passed surface.
+pygame.sprite.LayeredUpdates.get_sprites_at
+returns a list with all sprites at that position.
+pygame.sprite.LayeredUpdates.get_sprite
+returns the sprite at the index idx from the groups sprites
+pygame.sprite.LayeredUpdates.remove_sprites_of_layer
+removes all sprites from a layer and returns them as a list.
+pygame.sprite.LayeredUpdates.layers
+returns a list of layers defined (unique), sorted from bottom up.
+pygame.sprite.LayeredUpdates.change_layer
+changes the layer of the sprite
+pygame.sprite.LayeredUpdates.get_layer_of_sprite
+returns the layer that sprite is currently in.
+pygame.sprite.LayeredUpdates.get_top_layer
+returns the top layer
+pygame.sprite.LayeredUpdates.get_bottom_layer
+returns the bottom layer
+pygame.sprite.LayeredUpdates.move_to_front
+brings the sprite to front layer
+pygame.sprite.LayeredUpdates.move_to_back
+moves the sprite to the bottom layer
+pygame.sprite.LayeredUpdates.get_top_sprite
+returns the topmost sprite
+pygame.sprite.LayeredUpdates.get_sprites_from_layer
+returns all sprites from a layer, ordered by how they where added
+pygame.sprite.LayeredUpdates.switch_layer
+switches the sprites from layer1 to layer2
