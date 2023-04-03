@@ -18,6 +18,7 @@ mainScreen = pygame.display.set_mode((1280, 720)) # Création et définition des
 
 # Initialisation des musiques
 mixer.music.load("musicecranaccueil.mp3")
+mixer.music.set_volume(0.4)
 mixer.music.play(-1)
 
 # Création des objets de classes
