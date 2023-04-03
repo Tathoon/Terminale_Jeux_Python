@@ -101,6 +101,33 @@ son = pygame.mixer.Sound("son.wav")
 joue=True
 	Jouer le son
 son.play()
+
+Collisions 
+
+pygame.sprite.spritecollide
+#Trouve les sprites étant à l'intersection d'un sprite
+
+pygame.sprite.collide_rect
+#detecte collisions entre deux sprites mais utilise un rect
+
+pygame.sprite.collide_rect_ratio
+#detecte collisions entre deux sprites mais utilise un rect défini par un ratio
+
+pygame.sprite.collide_circle
+#detecte collisions entre deux sprites mais utilise un cercle
+
+pygame.sprite.collide_circle_ratio
+#detecte collisions entre deux sprites mais utilise un cercle défini par un ratio
+
+pygame.sprite.collide_mask
+#detecte collisions entre deux sprites mais utilise un mask
+
+pygame.sprite.groupcollide
+#trouve tous les sprites en collision avec un autre groupe de sprite
+
+pygame.sprite.spritecollideany
+#Test vérifiant si un sprite est en collision avec n'importe quoi
+
 	Actions sur le son
 pygame.mixer.pause()
 pygame.mixer.unpause()
