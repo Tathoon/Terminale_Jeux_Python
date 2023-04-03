@@ -102,7 +102,7 @@ joue=True
 	Jouer le son
 son.play()
 
-Collisions 
+	Collisions 
 
 pygame.sprite.spritecollide
 #Trouve les sprites étant à l'intersection d'un sprite
@@ -139,3 +139,30 @@ Clock.tick(60) # méthode tick() qui initialise les fps du jeu
 Hitbox d'un objet 
 objet pygame.Rect
 attributs de cet objet : pos x, pos y, largeur, hauteur
+
+	Sprite 
+
+pygame.sprite.Sprite.update
+#méthode controlant le comportement d'un sprite
+
+pygame.sprite.Sprite.add
+#méthode permettant d'ajouter un sprite à un groupe
+
+pygame.sprite.Sprite.remove
+#méthode qui retire le sprite du groupe
+
+pygame.sprite.Sprite.kill
+#méthode qui reire le sprite de tous les groupes
+
+pygame.sprite.Sprite.alive
+#méthode qui vérifie si le sprite appartient à un groupe donné
+
+pygame.sprite.Sprite.groups
+#méthode qui fait une liste des sprites appartenant à un groupe de sprites
+
+	Super-classes
+
+super.__init__() #méthode pour appeler une super-classe
+class NomClass(Super-classe1, Superclass2): Pour atttribuer à une classe des super-classes
+
+Ex de super-classes : Sprite, DirtySprite, 
