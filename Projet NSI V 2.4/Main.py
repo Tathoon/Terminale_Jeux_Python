@@ -61,9 +61,9 @@ while running:
         accueil.update(mainScreen, menu_accueil.background)
         pnj.update(mainScreen)
         """
-        if pnj.pressed.get(pygame.K_RIGHT) and pnj.type.pos.x + pnj.type.pos.width < mainScreen.get_width():
+        if pnj.pressed.get(pygame.K_RIGHT) and pnj.type.pos.x + pnj.type.pos.width < mainScreen.get_width(): #Tant que le pnj ne sort pas de l'écran par la droite
             pnj.move_right()     
-        elif pnj.pressed.get(pygame.K_LEFT):
+        elif pnj.pressed.get(pygame.K_LEFT): #dans ce cas ci le pnj peut aller à gauche sans être limité car switch sur une page quetes
             pnj.move_left()
         if pnj.type.pos.x < -15:
             accueil.is_active = False
