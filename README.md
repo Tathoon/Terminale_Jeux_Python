@@ -18,3 +18,6 @@ Systeme de quetes avec differents mini jeux:
 - Combat
 - Dessin souris (style Squidgame)
 - Stuff (améliorations, etc...)
+
+Idées musiques:
+Genshin - Symhony of Boreal Wind --> Menu
