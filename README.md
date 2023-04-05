@@ -2,14 +2,8 @@
 
 Jeu en python : NOM
 
-Site web pour assets : FlatIcon
-
-Thomas -> Assets....
-
-Teva -> ...
-
-Johann -> Bouton "Start"...
-
+Site assets 1 : FlatIcon
+Site assets 2 : https://hub.notaname.fr/game-dev/ressources
 Features Principales :
 
 Systeme de quetes avec differents mini jeux:
@@ -18,6 +12,3 @@ Systeme de quetes avec differents mini jeux:
 - Combat
 - Dessin souris (style Squidgame)
 - Stuff (améliorations, etc...)
-
-Idées musiques:
-Genshin - Symhony of Boreal Wind --> Menu
