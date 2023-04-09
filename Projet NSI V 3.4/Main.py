@@ -56,12 +56,9 @@ while running:
 
         evenement.mouvement_joueur(pnj, mainScreen)
         if pnj.type.pos.x < -15:
-            """
             accueil.is_active = False
             pnj.is_active = False
             menu_quetes.is_active = True
-            """
-
 
         for event in pygame.event.get():
             running = evenement.gerer_quitter(event, running)
