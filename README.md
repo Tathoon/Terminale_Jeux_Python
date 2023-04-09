@@ -3,6 +3,7 @@ Jeu python nommé NOM
 Projet NSI V. 9.04:
 - Ajout d'un premier fondu pour le changement de page, ainsi que des boutons de quetes, des pages de descriptions de quete ainsi que les prémices de la Quete 1 "Esquive
 et +". Le personage sur la quete 1 est capable de lancer des projectiles qui sont en rotation et qui sont supprimés lorsqu'ils quittent l'écran.
+- Fichiers Animation et Musiques actuellement non utilisés
 - Ajustement de la taille du personnage
 - Les ajouts sont non optimisés
 
