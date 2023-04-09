@@ -52,8 +52,6 @@ while running:
     elif accueil.is_active == True and pnj.is_active == True:
         accueil.update(mainScreen, menu_accueil.background)
         pnj.update(mainScreen)
-
-
         evenement.mouvement_joueur(pnj, mainScreen)
         if pnj.type.pos.x < -15:
             accueil.is_active = False
