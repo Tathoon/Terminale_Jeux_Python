@@ -17,32 +17,23 @@ class Quizz:
         ["oxymore", "Molière", "Hugo", "pathétique", "chausse"],
         ["27", "Guatemala", "Indonésie", "Loire", "6"],
         ["1815", "1783", "Jules César", "commerce triangulaire", "1989"]]
-        self.options = [[],[],[],[]]
         self.questionsposees = []
         self.questionsmax = 10
+        self.ap = pygame.screen(screen.get_size)
+        self.ap = pygame.image.load("quizz.png").convert()
+        self.score = 0
+        self.question_actuelle = 0
 
 
 
-    def partie(self.questions, self.reponses, questions_max):
-
-        nb_bonnes_rep=0
-
-        for question in range(self.questionsmax):
-            choisir_question(self.questions)
-            verif_reponse(self.questions, self.reponses)
-
-        print("Partie Terminée !")
-        print("Vous avez",nb_bonnes_rep,"bonnes réponses !")
-
-
-    def choisir_question(self.questions):
+    def choisir_question(self):
 
         domaine = randint(0,3)
         num_question = randint(0,4)
         question_posee = self.questions[domaine][num_question]
 
 
-    def verif_reponse(self.questions, self.reponses):
+    def verif_reponse(self):
 
         self.reponse = input()
         if str(self.reponse)==str(self.reponses[domaine][num_question]) or str(self.reponses[domaine][num_question]) in str(self.reponse):
@@ -52,9 +43,49 @@ class Quizz:
             else:
                 print("Mauvaise Réponse !")
 
+        y=100
+        souris = pygame.mouse.get_pos()
+        clic = pygame.mouse.get_pressed()
+        if clic[0] == 1: #on vérifie si on fait clic gauche
+        if y > souris[1] > y - 50: #on vérifie les coordonnées de la position du curseur
+                if self.reponse[self.question_actuelle][0] == self.reponses[question_actuelle]: #on vérifie si la réponse est juste
+                    self.score += 1 #on augmente le score
+                self.question_actuelle += 1 #on change de question
 
-    def end_quizz(self.questionsmax):
+
+    def affiche_questions(self):
+
+        police = pygame.font.Font(None, taille_police)
+        question_texte = police.render(questions[question_actuelle], True, (0, 0, 0))
+        ecran.blit(question_texte, (50, 50))
+
+
+    def affiche_reponses(self):
+        y = 100
+        for reponse in reponses[question_actuelle]:
+            reponse_texte = police.render(reponse, True, (0, 0, 0))
+            ecran.blit(reponse_texte, (100, y))
+            y += 50
+
+
+    def affiche_score(self):
+        self.score = police.render("Score: " + str(self.score), True, (255, 0, 0))
+        self.screen.blit(self.score, (50, 50))
+
+
+    def end_quizz(self):
 
         if len(self.questionsposees) == self.questionsmax:
         print("Partie Terminée !")
         print("Vous avez",nb_bonnes_rep,"bonnes réponses !")
+
+
+    def partie(self):
+
+        for question in range(self.questionsmax):
+            choisir_question()
+            affiche_questions()
+            affiche_reponses()
+            verif_reponse()
+            affiche_score()
+        end_quizz()
