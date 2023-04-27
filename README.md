@@ -1,5 +1,15 @@
 Jeu python nommé NOM
 
+Reste à faire :
+-assets
+-2e minijeu
+-animations-persos
+-regroupement squelette-map
+-réinitialiser la pos des monstres à chaque partie
+-#créer les pnjs histoires#
+-fondus
+-accès aux quêtes depuis la map
+
 Projet NSI V. 12.04:
 - Ajout d'une classe de gestion des musiques lors de changements de pages.
 - Amélioration de la quête 1. Le personnage possède une jauge de vie. Il affronte des monstres qui ont aussi une jauge de vie. Les collisions sont appliquées. Au contact des monstres, le personnage perd des point de vie. Il peut lancer des projectiles qui sont supprimés au contacte des monstres et qui lui infligent des point de vie. Lorsqu'un monstre est tué, un nouveau apparait. Lorsque le joueur est tué, un écran de game over apparait.
