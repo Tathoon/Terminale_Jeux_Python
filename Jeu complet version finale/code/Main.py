@@ -10,7 +10,7 @@ from Game_reve import monde_reve
 from Evenement import *
 from Musique import soundDesign
 
-path = "Projet NSI V 15.5/"
+path = "Jeu complet version finale/"
 # Création de la fenêtre
 mainScreen = pygame.display.set_caption("Une ère paisible") # Nommage de la fenêtre
 mainScreen = pygame.display.set_icon(pygame.image.load(path + "assets/monster/mario.png")) # Définition d'une icone de fenêtre

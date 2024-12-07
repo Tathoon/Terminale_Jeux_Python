@@ -5,7 +5,7 @@ class projectile(pygame.sprite.Sprite):
     def __init__(self, pnj):
         super().__init__()
         self.speed = 5
-        self.image = pygame.transform.scale(pygame.image.load("Projet NSI V 15.5/assets/projectile/bombe.png"),(85,85))
+        self.image = pygame.transform.scale(pygame.image.load("Jeu complet version finale/assets/projectile/bombe.png"),(85,85))
         self.rect = self.image.get_rect()
         self.rect.x = pnj.type.rect.x + 120
         self.rect.y = pnj.type.rect.y + 120

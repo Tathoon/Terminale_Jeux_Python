@@ -8,7 +8,7 @@ class monster(pygame.sprite.Sprite):
         self.health = 100
         self.max_health = 100
         self.attack = 5
-        self.image = pygame.transform.scale(pygame.image.load("Projet NSI V 15.5/assets/monster/mario.png"),(260,260))
+        self.image = pygame.transform.scale(pygame.image.load("Jeu complet version finale/assets/monster/mario.png"),(260,260))
         self.rect = self.image.get_rect()
         self.rect.x = random.randint(mainScreen.get_width(), mainScreen.get_width() + 400)
         self.rect.y = 425
