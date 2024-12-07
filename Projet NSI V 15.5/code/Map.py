@@ -19,17 +19,17 @@ class Map:                        # définit une classe appelée "Map" pour repr
 
 class MapManager: # définit une classe appelée "MapManager" pour gérer la gestion des cartes dans le jeu
 
-    def __init__(self, mainScreen, player): # définit le constructeur de la classe "MapManager", qui est appelé lorsqu'un nouvel objet "MapManager" est créé. Il prend deux arguments en entrée : "mainScreen", qui représente l'écran principal du jeu, et "player", qui représente le joueur
+    def __init__(self, mainScreen, player, path): # définit le constructeur de la classe "MapManager", qui est appelé lorsqu'un nouvel objet "MapManager" est créé. Il prend deux arguments en entrée : "mainScreen", qui représente l'écran principal du jeu, et "player", qui représente le joueur
         self.maps = dict()                  # initialise un dictionnaire vide "maps" qui sera utilisé pour stocker les cartes du jeu avec leur nom comme clé
         self.screen = mainScreen            # attribue à l'attribut self.screen de l'objet MapManager l'écran principal du jeu (mainScreen), qui est passé en argument lors de la création de l'objet. Cet attribut sera utilisé pour afficher les différentes cartes du jeu à l'écran
         self.player = player                # attribue à l'attribut self.player de l'objet MapManager l'objet du joueur (player), qui est passé en argument lors de la création de l'objet. Cet attribut sera utilisé pour interagir avec le joueur lors de la gestion des différentes cartes du jeu
         self.current_map = "throne-exit"    # attribue à l'attribut self.current_map de l'objet MapManager le nom de la carte actuellement affichée à l'écran, qui est "MapV1" dans cet exemple. Cela permet de garder une référence à la carte actuelle pour la gestion des portails et des téléportations
 
-        self.register_map("throne-exit", portals=[Portal(from_world="throne-exit", origin_point="exteriorexit", target_world="cours-quete", teleport_point="playerexterior", name="1"),
+        self.register_map("throne-exit", path, portals=[Portal(from_world="throne-exit", origin_point="exteriorexit", target_world="cours-quete", teleport_point="playerexterior", name="1"),
                                                   Portal(from_world="throne-exit", origin_point="throneroomexit", target_world="cours-quete", teleport_point="playerexterior", name="5")
         ])
         
-        self.register_map("cours-quete", portals=[Portal(from_world="cours-quete", origin_point="enter-throne-exit", target_world="throne-exit", teleport_point="playerexitthrone", name="2"),
+        self.register_map("cours-quete", path, portals=[Portal(from_world="cours-quete", origin_point="enter-throne-exit", target_world="throne-exit", teleport_point="playerexitthrone", name="2"),
                                                   Portal(from_world="cours-quete", origin_point="quete-interaction", target_world="throne-exit", teleport_point="playerexitthrone", name="3"),
                                                   Portal(from_world="cours-quete", origin_point="quete-interaction2", target_world="throne-exit", teleport_point="playerexitthrone", name="4")
         ])
@@ -81,10 +81,10 @@ class MapManager: # définit une classe appelée "MapManager" pour gérer la ges
         self.player.position[1] = point.y # récupère les coordonnées y de l'objet de téléportation obtenu dans la carte du jeu à l'aide de la méthode
         self.player.save_location()       # appelle la méthode save_location() de l'objet du joueur (self.player)
 
-    def register_map(self, name, portals=[]):
+    def register_map(self, name, path, portals=[]):
         
         # charger la carte (tmx)
-        tmx_data = pytmx.util_pygame.load_pygame(f"assets_monde_reve/map/{name}.tmx")        # utilise la fonction load_pygame de la bibliothèque pytmx pour charger les données de la carte du jeu à partir d'un fichier au format TMX. Le nom du fichier est construit en utilisant le nom de la carte récupéré à partir de l'argument name, et il est inséré dans la chaîne de caractères formatée
+        tmx_data = pytmx.util_pygame.load_pygame(f"{path}assets_monde_reve/map/{name}.tmx")        # utilise la fonction load_pygame de la bibliothèque pytmx pour charger les données de la carte du jeu à partir d'un fichier au format TMX. Le nom du fichier est construit en utilisant le nom de la carte récupéré à partir de l'argument name, et il est inséré dans la chaîne de caractères formatée
         map_data = pyscroll.data.TiledMapData(tmx_data)                                      # creer un objet TiledMapData à partir des données de carte chargées précédemment à l'aide de la bibliothèque pyscroll. Cet objet représente la carte du jeu sous une forme adaptée pour être utilisée avec pyscroll
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size()) # creer un objet BufferedRenderer à partir de l'objet TiledMapData créé précédemment. Cet objet est responsable du rendu de la carte à l'écran et est configuré avec la taille de l'écran de jeu récupérée à partir de self.screen.get_size()
         map_layer.zoom = 1.5                                                                 # onfigure le zoom de la carte du jeu à 1.5, ce qui permet d'agrandir ou de réduire la carte pour s'adapter à l'échelle de l'écran de jeu

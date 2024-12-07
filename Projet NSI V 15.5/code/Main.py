@@ -10,25 +10,26 @@ from Game_reve import monde_reve
 from Evenement import *
 from Musique import soundDesign
 
+path = "Projet NSI V 15.5/"
 # Création de la fenêtre
 mainScreen = pygame.display.set_caption("Une ère paisible") # Nommage de la fenêtre
-mainScreen = pygame.display.set_icon(pygame.image.load("assets/monster/mario.png")) # Définition d'une icone de fenêtre
+mainScreen = pygame.display.set_icon(pygame.image.load(path + "assets/monster/mario.png")) # Définition d'une icone de fenêtre
 mainScreen = pygame.display.set_mode((1280, 720)) # Création et définition des dimmensions de la fenêtre
 
 # Création des objets de classes pour chaque pages
-menu_accueil = menu_accueil(mainScreen)
-choixBase = choixBase(mainScreen)
-accueil = accueil(mainScreen)
-menu_quetes = menu_quetes(mainScreen)
-descri_quete1 = descri_quete1(mainScreen)
-descri_quete2 = descri_quete2(mainScreen)
-quete1 = quete1(mainScreen)
-quete2 = quete2(mainScreen)
+menu_accueil = menu_accueil(mainScreen, path)
+choixBase = choixBase(mainScreen, path)
+accueil = accueil(mainScreen, path)
+menu_quetes = menu_quetes(mainScreen, path)
+descri_quete1 = descri_quete1(mainScreen, path)
+descri_quete2 = descri_quete2(mainScreen, path)
+quete1 = quete1(mainScreen, path)
+quete2 = quete2(mainScreen, path)
 quete3 = quete3(mainScreen)
-monde_reve = monde_reve(mainScreen)
-defaite = defaite(mainScreen)
+monde_reve = monde_reve(mainScreen, path)
+defaite = defaite(mainScreen, path)
 
-soundDesign = soundDesign() # Classe de gestion des sons
+soundDesign = soundDesign(path) # Classe de gestion des sons
 soundDesign.play_music("intro", 1, -1)
 
 evenement = evenement(menu_accueil, mainScreen) # Classe de gestion des évènements

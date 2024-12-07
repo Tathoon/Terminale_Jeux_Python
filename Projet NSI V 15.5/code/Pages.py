@@ -2,7 +2,6 @@ import pygame
 from Button import button, descriptions #renommer Button par elements
 from Projectile import projectile
 from Fondu import *
-
 class menu_accueil:
     """
     Classe qui permet la gestion des éléments de la page menu_accueil
@@ -16,12 +15,12 @@ class menu_accueil:
         - update -> Applique les éléments background et buttonStart
     """
 
-    def __init__(self, mainScreen):
+    def __init__(self, mainScreen, path):
         self.is_active = True
         # Importation de l'arrière plan
-        self.background = pygame.transform.scale(pygame.image.load('assets/background/mainBack01.jpg'),(mainScreen.get_size()))
+        self.background = pygame.transform.scale(pygame.image.load(path + 'assets/background/mainBack01.jpg'),(mainScreen.get_size()))
         #Création d'un bouton Start
-        self.buttonStart = button("assets/button/startbutton.png", 375, 200, mainScreen.get_width()/2, mainScreen.get_height()*3/4)
+        self.buttonStart = button(path + "assets/button/startbutton.png", 375, 200, mainScreen.get_width()/2, mainScreen.get_height()*3/4)
 
     def update(self, mainScreen, soundDesign):
         # ajour de l'arrière plan et du bouton buttonStart
@@ -42,14 +41,14 @@ class choixBase:
         - update -> Applique les éléments background, buttonChoixA et buttonChoixB
     """
 
-    def __init__(self, mainScreen):
+    def __init__(self, mainScreen, path):
         self.is_active = False
-        self.buttonRetour = button('assets/button/retour.png', 150, 150, 80, 80)
-        self.background = pygame.transform.scale(pygame.image.load('assets/background/mainBack01.jpg'),(mainScreen.get_size()))
-        self.buttonChoixA = button("assets/choice/boutonA.png", 200, 100, 450, mainScreen.get_height()-130)
-        self.buttonChoixB = button("assets/choice/boutonB.png", 200, 100, mainScreen.get_width()-450, mainScreen.get_height()-130)
-        self.imageA = button("assets/choice/choixA.png", 280, 400, 450, mainScreen.get_height()-400)
-        self.imageB = button("assets/choice/choixB.png", 210, 400, mainScreen.get_width()-450, mainScreen.get_height()-400)
+        self.buttonRetour = button(path + 'assets/button/retour.png', 150, 150, 80, 80)
+        self.background = pygame.transform.scale(pygame.image.load(path + 'assets/background/mainBack01.jpg'),(mainScreen.get_size()))
+        self.buttonChoixA = button(path + "assets/choice/boutonA.png", 200, 100, 450, mainScreen.get_height()-130)
+        self.buttonChoixB = button(path + "assets/choice/boutonB.png", 200, 100, mainScreen.get_width()-450, mainScreen.get_height()-130)
+        self.imageA = button(path + "assets/choice/choixA.png", 280, 400, 450, mainScreen.get_height()-400)
+        self.imageB = button(path + "assets/choice/choixB.png", 210, 400, mainScreen.get_width()-450, mainScreen.get_height()-400)
         
     def update(self, mainScreen):
 
@@ -73,10 +72,10 @@ class accueil:
         - update -> Applique les éléments background, appel la méthode update de la classe game et appel la méthode mouvement_joueur de la classe evenement
     """
 
-    def __init__(self, mainScreen):
+    def __init__(self, mainScreen, path):
         self.is_active = False
-        self.background = pygame.transform.scale(pygame.image.load('assets/background/menuBack01.jpg'),(mainScreen.get_size()))
-        self.buttonRetour = button('assets/button/retour.png', 150, 150, 80, 80)
+        self.background = pygame.transform.scale(pygame.image.load(path + 'assets/background/menuBack01.jpg'),(mainScreen.get_size()))
+        self.buttonRetour = button(path + 'assets/button/retour.png', 150, 150, 80, 80)
     
     def update_arrive(self, mainScreen, choixBase, pnj, evenement):
         change_image_with_transition(choixBase.background, self.background, (0,0,0), 3, mainScreen)
@@ -102,13 +101,13 @@ class menu_quetes:
         - update -> Applique les éléments background et buttonRetour
     """
 
-    def __init__(self, mainScreen):
+    def __init__(self, mainScreen, path):
         self.is_active = False
-        self.background = pygame.transform.scale(pygame.image.load('assets/background/menuQuetes.jpg'),(mainScreen.get_size()))
-        self.buttonRetour = button('assets/button/retour.png', 150, 150, 80, 80)
-        self.desc_menu_quete = button('assets/button/desc_menu_quete.png', 550, 225, mainScreen.get_width()/2, 120)
-        self.button_Quete1 = button('assets/button/button_quete1.png', 250, 125, mainScreen.get_width()/2, 325)
-        self.button_Quete2 = button('assets/button/button_quete2.png', 250, 125, mainScreen.get_width()/2, 500)
+        self.background = pygame.transform.scale(pygame.image.load(path + 'assets/background/menuQuetes.jpg'),(mainScreen.get_size()))
+        self.buttonRetour = button(path + 'assets/button/retour.png', 150, 150, 80, 80)
+        self.desc_menu_quete = button(path + 'assets/button/desc_menu_quete.png', 550, 225, mainScreen.get_width()/2, 120)
+        self.button_Quete1 = button(path + 'assets/button/button_quete1.png', 250, 125, mainScreen.get_width()/2, 325)
+        self.button_Quete2 = button(path + 'assets/button/button_quete2.png', 250, 125, mainScreen.get_width()/2, 500)
 
     def update(self, mainScreen):
         mainScreen.blit(self.background, (0,0))
@@ -119,12 +118,12 @@ class menu_quetes:
 
 class descri_quete1:
 
-    def __init__(self, mainScreen):
+    def __init__(self, mainScreen, path):
         self.is_active = False
-        self.background = pygame.transform.scale(pygame.image.load('assets/background/menuQuetes.jpg'),(mainScreen.get_size()))
-        self.buttonRetour = button('assets/button/retour.png', 150, 150, 80, 80)
-        self.descri = descriptions('assets/descriptions quetes/Descri_Quete1.png', 600, 320, mainScreen.get_width()/2, 250)
-        self.lancer = button('assets/button/lancer.png', 400, 100, mainScreen.get_width()/2, 470)
+        self.background = pygame.transform.scale(pygame.image.load(path + 'assets/background/menuQuetes.jpg'),(mainScreen.get_size()))
+        self.buttonRetour = button(path + 'assets/button/retour.png', 150, 150, 80, 80)
+        self.descri = descriptions(path + 'assets/descriptions quetes/Descri_Quete1.png', 600, 320, mainScreen.get_width()/2, 250)
+        self.lancer = button(path + 'assets/button/lancer.png', 400, 100, mainScreen.get_width()/2, 470)
 
     def update(self, mainScreen):
         mainScreen.blit(self.background, (0,0))
@@ -134,12 +133,12 @@ class descri_quete1:
 
 class descri_quete2:
 
-    def __init__(self, mainScreen):
+    def __init__(self, mainScreen, path):
         self.is_active = False
-        self.background = pygame.transform.scale(pygame.image.load('assets/background/menuQuetes.jpg'),(mainScreen.get_size()))
-        self.buttonRetour = button('assets/button/retour.png', 150, 150, 80, 80)
-        self.descri = descriptions('assets/descriptions quetes/Descri_Quete2.png', 600, 320, mainScreen.get_width()/2, 250)
-        self.lancer = button('assets/button/lancer.png', 400, 100, mainScreen.get_width()/2, 470)
+        self.background = pygame.transform.scale(pygame.image.load(path + 'assets/background/menuQuetes.jpg'),(mainScreen.get_size()))
+        self.buttonRetour = button(path + 'assets/button/retour.png', 150, 150, 80, 80)
+        self.descri = descriptions(path + 'assets/descriptions quetes/Descri_Quete2.png', 600, 320, mainScreen.get_width()/2, 250)
+        self.lancer = button(path + 'assets/button/lancer.png', 400, 100, mainScreen.get_width()/2, 470)
 
     def update(self, mainScreen):
         mainScreen.blit(self.background, (0,0))
@@ -149,9 +148,9 @@ class descri_quete2:
 
 class quete1:
 
-    def __init__(self, mainScreen):
+    def __init__(self, mainScreen, path):
         self.is_active = False
-        self.background = pygame.transform.scale(pygame.image.load('assets/background/quete1_Back.jpg'),(mainScreen.get_size()))
+        self.background = pygame.transform.scale(pygame.image.load(path + 'assets/background/quete1_Back.jpg'),(mainScreen.get_size()))
 
     def update_arrive(self, pnj, mainScreen):
         pnj.spawn_monster(mainScreen)
@@ -171,10 +170,10 @@ class quete1:
         
 class quete2:
 
-    def __init__(self, mainScreen):
+    def __init__(self, mainScreen, path):
         self.is_active = False
-        self.buttonRetour = button('assets/button/retour.png', 150, 150, 80, 80)
-        self.background = pygame.transform.scale(pygame.image.load('assets/background/quete2_Back.png'),(mainScreen.get_size()))
+        self.buttonRetour = button(path + 'assets/button/retour.png', 150, 150, 80, 80)
+        self.background = pygame.transform.scale(pygame.image.load(path + 'assets/background/quete2_Back.png'),(mainScreen.get_size()))
 
     def update(self, mainScreen):
         mainScreen.blit(self.background, (0,0))
@@ -187,10 +186,10 @@ class quete3:
         
 class defaite:
     
-    def __init__(self, mainScreen):
+    def __init__(self, mainScreen, path):
         self.is_active = False
-        self.retour_menu_quete = button('assets/button/retour_menu_quete.png', 450, 100, mainScreen.get_width()/2, 500) # Bouton à changer
-        self.background = pygame.transform.scale(pygame.image.load('assets/background/back_mort.jpg'),(mainScreen.get_size()))
+        self.retour_menu_quete = button(path + 'assets/button/retour_menu_quete.png', 450, 100, mainScreen.get_width()/2, 500) # Bouton à changer
+        self.background = pygame.transform.scale(pygame.image.load(path + 'assets/background/back_mort.jpg'),(mainScreen.get_size()))
 
     def update(self, mainScreen):
         # ajout de l'arrière plan et du bouton buttonStart

@@ -3,14 +3,14 @@ from pygame import *
 
 class soundDesign:
 
-    def __init__(self):
+    def __init__(self, path):
         self.musics = {
-        "intro" : "musiques/mus_intro.mp3",
-        "menu_quetes" : "musiques/mus_menu_quete.mp3",
-        "quete1" : "musiques/mus_quete1.mp3",
-        "quete2" : "musiques/mus_quete2.mp3",
-        "quete3" : "musiques/mus_quete3.mp3",
-        "game_over" : "musiques/mus_game_over.mp3"
+        "intro" : path + "musiques/mus_intro.mp3",
+        "menu_quetes" : path + "musiques/mus_menu_quete.mp3",
+        "quete1" : path + "musiques/mus_quete1.mp3",
+        "quete2" : path + "musiques/mus_quete2.mp3",
+        "quete3" : path + "musiques/mus_quete3.mp3",
+        "game_over" : path + "musiques/mus_game_over.mp3"
         }
 
     def play_music(self, name, volume, repet):

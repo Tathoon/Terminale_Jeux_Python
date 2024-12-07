@@ -94,7 +94,7 @@ class guerrier(pygame.sprite.Sprite):
         self.max_health = 100
         self.damage = 10
         self.speed = 7
-        self.image = pygame.transform.scale(pygame.image.load("assets/pnj/guerrier.png"),(260,260))
+        self.image = pygame.transform.scale(pygame.image.load("Projet NSI V 15.5/assets/pnj/guerrier.png"),(260,260))
         self.rect = self.image.get_rect()
         self.rect.x = 0
         self.rect.y = 0
@@ -123,7 +123,7 @@ class mage(pygame.sprite.Sprite):
         self.max_health = 100
         self.damage = 35
         self.speed = 5
-        self.image = pygame.transform.scale(pygame.image.load("assets/pnj/mage.png"),(260,260))
+        self.image = pygame.transform.scale(pygame.image.load("Projet NSI V 15.5/assets/pnj/mage.png"),(260,260))
         self.rect = self.image.get_rect()
         self.rect.x = 0
         self.rect.y = 0

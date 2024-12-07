@@ -6,10 +6,10 @@ from Animation import AnimateSprite
 from Evenement import evenement
 
 class monde_reve:
-    def __init__(self, mainScreen):
+    def __init__(self, mainScreen, path):
         # generer un joueur 
-        self.player = Player("Wizard")                       # creer un objet de la classe "player" appelé "player" avec une position de départ de (640, 607) sur l'écran
-        self.map_manager = MapManager(mainScreen, self.player) # creer un objet de la classe "MapManager" appelé "map_manager" avec l'écran principal du jeu et l'objet du joueur comme arguments
+        self.player = Player("Wizard", path)                       # creer un objet de la classe "player" appelé "player" avec une position de départ de (640, 607) sur l'écran
+        self.map_manager = MapManager(mainScreen, self.player, path) # creer un objet de la classe "MapManager" appelé "map_manager" avec l'écran principal du jeu et l'objet du joueur comme arguments
 
     def handle_input(self):
         # touche pour deplacement du joueur
@@ -47,8 +47,8 @@ class monde_reve:
 
 class Entity(AnimateSprite): # définit une nouvelle classe appelée "player_reve" qui hérite de la classe "pygame.sprite.Sprite"
 
-    def __init__(self, name, x , y):
-        super().__init__(name)                   # appelle la méthode "init()" de la classe mère "pygame.sprite.Sprite", cela permet d'initialiser l'objet comme un sprite pygame
+    def __init__(self, name, x , y, path):
+        super().__init__(name, path)                   # appelle la méthode "init()" de la classe mère "pygame.sprite.Sprite", cela permet d'initialiser l'objet comme un sprite pygame
         self.image = self.get_image(0, 0)    # appelle la méthode "get_image()" de l'objet avec les coordonnées x=0 et y=0 pour obtenir une sous-image de l'attribut "sprite_sheet" et l'assigne à l'attribut "image" de l'objet
         self.image.set_colorkey([0, 0, 0])   # définit la couleur transparente de l'attribut "image" en utilisant la valeur RVB [0, 0, 0], qui représente le noir, cela permet de rendre le fond noir de l'image transparent, de sorte que seule la partie du joueur sera visible
         self.rect = self.image.get_rect()    # creer un objet Rect (rectangle) à partir de l'attribut "image" de l'objet et l'assigne à l'attribut "rect" de l'objet, le rectangle est utilisé pour représenter la position et la taille du joueur dans le jeu
@@ -80,5 +80,5 @@ class Entity(AnimateSprite): # définit une nouvelle classe appelée "player_rev
 
 class Player(Entity):
 
-    def __init__(self, name):
-        super().__init__(f"{name}", 0, 0)
+    def __init__(self, name, path):
+        super().__init__(f"{name}", 0, 0, path)
