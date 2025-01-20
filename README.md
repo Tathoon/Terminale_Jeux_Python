@@ -19,6 +19,7 @@ Rendez-vous ensuite à la salle du trône en passant par la gauche de l'écran.
 Sortez ensuite par le sud et rejoignez le panneau des quêtes qui vous mènera au menu des quêtes.
 
 ![Panneau_Quetes](README_Assets/panneau_quetes.png)
+
 ![Choix_Quetes](README_Assets/choix_quetes.png)
 
 C'est l'heure du combat ! Seule la mission guerrière est implémentée. Si vous êtes curieux, référez vous aux archives qui correspondent en partie à la mission intellectuelle qui a été retirée du jeu car elle ne fonctionnait pas correctement.
