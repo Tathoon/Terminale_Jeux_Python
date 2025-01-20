@@ -4,7 +4,7 @@ class AnimateSprite(pygame.sprite.Sprite):
 
     def __init__(self, name, path):
         super().__init__()
-        self.sprite_sheet = pygame.image.load(f'{path}assets_monde_reve\sprites\{name}.png')
+        self.sprite_sheet = pygame.image.load(f'{path}assets_monde_reve/sprites/{name}.png')
         self.animation_index = 0
         self.images = {                      # creer un dictionnaire d'images pour les différentes animations du joueur, chaque clé du dictionnaire représente une direction d'animation (haut, bas, droite, gauche) et est associée à une sous-image de l'attribut "sprite_sheet" obtenue à partir de la méthode "get_image()"
             'up': self.get_images(32),
