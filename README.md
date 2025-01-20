@@ -17,7 +17,6 @@ Rendez-vous ensuite à la salle du trône en passant par la gauche de l'écran.
 ![Salle_Trone](README_Assets/salle_trone.png)
 
 Sortez ensuite par le sud et rejoignez le panneau des quêtes qui vous mènera au menu des quêtes.
-
 ![Panneau_Quetes](README_Assets/panneau_quetes.png)
 
 ![Choix_Quetes](README_Assets/choix_quetes.png)
