@@ -83,6 +83,6 @@ python3 Main.py
 Notez que si vous souhaitez désactiver l'environnement virtuel, il suffit d'utiliser la commande "**deactivate**"
 
 ## Crédits
-- PHILIPPE Teva
-- ANDRIOLETTI Thomas
-- MOLL Johann
+- [PHILIPPE Teva](https://github.com/TevaPhilippe05)
+- [ANDRIOLETTI Thomas](https://github.com/Tathoon)
+- [MOLL Johann](https://github.com/MikoThan)
